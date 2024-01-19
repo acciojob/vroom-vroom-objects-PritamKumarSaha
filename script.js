@@ -6,10 +6,12 @@ function Car(make, model) {
 Car.prototype.getMakeModel = function() {
 	return `${this.make} ${this.model}`;
 };
-
+// Constructor function for SportsCar
 function SportsCar(make, model, topSpeed) {
+	// call the Car constructor to initialize make and model
 	Car.call(this, make, model);
-	this.topSpeed = topSpeed;
+	// additional property for topSpeed
+	this._topSpeed = topSpeed;
 };
 SportsCar.prototype = Object.create(Car.prototype);
 SportsCar.prototype.getTopSpeed = function() {
